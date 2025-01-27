@@ -48,6 +48,12 @@ const Main = () => {
 		setEditedResult(e.target.value);
 	};
 
+	const handleFileUpload = (e) => {
+		const files = e.target.files;
+		// Process the uploaded files here
+		// You can use FileReader or any other method to read the files
+	};
+
 	return (
 		<div className="main">
 			<div className="nav">
@@ -142,12 +148,11 @@ const Main = () => {
 				<div className="main-bottom">
 					<div className="search-box">
 						<input
-							onChange={(e) => {
-								setInput(e.target.value);
-							}}
-							value={input}
-							type="file" 
-							placeholder="Upload code here to get the documentation generated"
+							onChange={handleFileUpload}
+							type="file"
+							webkitdirectory="true"
+							directory="true"
+							placeholder="Upload code base here to get the documentation generated"
 						/>
 						<div>
 							<img
