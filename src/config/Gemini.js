@@ -16,10 +16,10 @@ async function generateComprehensiveDocumentation(prompt) {
 
   // Fine-tuned generation configuration for comprehensive and precise output
   const generationConfig = {
-    temperature: 0.7, // Lowered for more deterministic results
-    topK: 10,         // Consider top 10 tokens for diversity without randomness
-    topP: 0.8,        // Narrowing probability for better focus
-    maxOutputTokens: 3000, // Increased for more detailed documentation
+    temperature: 1, // Lowered for more deterministic results
+    topK: 40,         // Consider top 10 tokens for diversity without randomness
+    topP: 0.95,        // Narrowing probability for better focus
+    maxOutputTokens: 8192, // Increased for more detailed documentation
   };
 
   // Safety settings to filter harmful or irrelevant content
