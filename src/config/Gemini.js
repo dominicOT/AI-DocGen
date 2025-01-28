@@ -7,11 +7,11 @@ import {
   HarmBlockThreshold,
 } from "@google/generative-ai";
 
-const MODEL_NAME = "gemini-1.0-pro";
-const API_KEY = "AIzaSyBejcTyS0S2-wOE3J9p0eV2Hi0OYZP00eA";
+const MODEL_NAME = "gemini-1.5-pro-002";
+// const API_KEY = "";
 
 async function generateComprehensiveDocumentation(prompt) {
-  const genAI = new GoogleGenerativeAI(API_KEY);
+  const genAI = new GoogleGenerativeAI(`${import.meta.env.GEM_API}`);
   const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
   // Fine-tuned generation configuration for comprehensive and precise output
@@ -55,12 +55,12 @@ async function generateComprehensiveDocumentation(prompt) {
     ${prompt}
     
     Guidelines:
-    1. Clearly describe the purpose of the code, its modules, and functions.
+    1. Clearly describe the purpose of the code.
     2. Use consistent formatting for headers, code snippets, and examples.
-    3. Highlight any limitations or assumptions.
-    4. Avoid verbose or redundant information while maintaining clarity.
+    3. Highlight any limitations.
+    4. Avoid redundant information while maintaining clarity.
     
-    Provide the output in a structured and reader-friendly format.
+    Provide the output in a structured format.
   `;
 
   try {
